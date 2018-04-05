@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">KotLinRxjava</string>
+    <string name="action_web_socket">Web socket...</string>
+    <string name="hint_comment">Comment</string>
+</resources>
