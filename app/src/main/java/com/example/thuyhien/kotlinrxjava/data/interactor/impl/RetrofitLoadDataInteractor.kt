@@ -16,20 +16,15 @@ import java.util.concurrent.TimeUnit
  */
 
 class RetrofitLoadDataInteractor(val dataApiService: DataEndpointInterface) : LoadDataInteractor {
+
     override fun getTopCoupons(listener: LoadDataListener<List<Coupon>>) {
         val observable = dataApiService.getStoreCoupons("topcoupons")
         observable.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
-                        { response ->
-                            listener.onLoadDataSucces(response.coupons)
-                        },
-                        { error ->
-                            listener.onLoadDataFail(Exception(error))
-                        },
-                        {
-                            -> Log.e("2359", "onComplete")
-                        })
+                        { listener.onLoadDataSucces(it.coupons) },
+                        { listener.onLoadDataFail(Exception(it)) },
+                        { Log.e("2359", "onComplete") })
     }
 
     override fun getAllCouponsByStore(listener: LoadDataListener<List<Coupon>>) {
