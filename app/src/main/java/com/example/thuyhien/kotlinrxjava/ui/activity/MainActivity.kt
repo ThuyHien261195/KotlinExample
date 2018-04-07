@@ -5,9 +5,10 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import android.widget.Toast
 import com.example.thuyhien.kotlinrxjava.R
+import com.example.thuyhien.kotlinrxjava.extensions.gone
+import com.example.thuyhien.kotlinrxjava.extensions.visible
 import com.example.thuyhien.kotlinrxjava.model.Coupon
 import com.example.thuyhien.kotlinrxjava.presenter.CouponPresenter
 import com.example.thuyhien.kotlinrxjava.ui.adapter.CouponAdapter
@@ -25,8 +26,13 @@ class MainActivity : DaggerAppCompatActivity(), CouponView, CouponsActivityListe
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        initView();
+        initView()
         couponPresenter.getCouponList()
+    }
+
+    private fun initView() {
+        val couponLayoutManager = LinearLayoutManager(this)
+        rvCoupon.layoutManager = couponLayoutManager
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
@@ -51,23 +57,18 @@ class MainActivity : DaggerAppCompatActivity(), CouponView, CouponsActivityListe
     }
 
     override fun showError(error: String) {
-        Toast.makeText(this, "Store coupon: " + error, Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "Store coupon: $error", Toast.LENGTH_LONG).show()
     }
 
     override fun showLoading() {
-        progressBarLoading.visibility = View.VISIBLE
+        progressBarLoading.visible()
     }
 
     override fun hideLoading() {
-        progressBarLoading.visibility = View.GONE
+        progressBarLoading.gone()
     }
 
     override fun onClickCoupon(coupon: Coupon) {
-        Toast.makeText(this, "Store coupon: " + coupon.couponCode, Toast.LENGTH_LONG).show()
-    }
-
-    private fun initView() {
-        val couponLayoutManager = LinearLayoutManager(this)
-        rvCoupon.layoutManager = couponLayoutManager
+        Toast.makeText(this, "Store coupon: ${coupon.couponCode}", Toast.LENGTH_LONG).show()
     }
 }
