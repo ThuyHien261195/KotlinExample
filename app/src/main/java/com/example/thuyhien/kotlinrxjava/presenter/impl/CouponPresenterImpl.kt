@@ -20,12 +20,12 @@ import javax.inject.Inject
  */
 class CouponPresenterImpl
     @Inject constructor(mainActivity: MainActivity,
-                        private var loadDataInteractor: LoadDataInteractor,
-                        private var sqliteInteractor: SQLiteInteractor,
-                        private var context: Context)
+                        private val loadDataInteractor: LoadDataInteractor,
+                        private val sqliteInteractor: SQLiteInteractor,
+                        private val context: Context)
     : CouponPresenter, LoadDataListener<List<Coupon>> {
 
-    private var couponViewWeakRef : WeakReference<CouponView> = WeakReference(mainActivity)
+    private val couponViewWeakRef : WeakReference<CouponView> = WeakReference(mainActivity)
 
     override fun getCouponList() {
         showLoading()

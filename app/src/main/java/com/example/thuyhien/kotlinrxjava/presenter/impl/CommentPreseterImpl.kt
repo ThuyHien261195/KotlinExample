@@ -17,7 +17,7 @@ import javax.inject.Inject
 class CommentPreseterImpl
 @Inject constructor(commentActivity: CommentActivity, private val serverConnection: ServerConnection) : CommentPresenter {
 
-    private var commentWeakRef = WeakReference<CommentView>(commentActivity)
+    private val commentWeakRef = WeakReference<CommentView>(commentActivity)
 
     override fun connectServer() {
         serverConnection.connect()

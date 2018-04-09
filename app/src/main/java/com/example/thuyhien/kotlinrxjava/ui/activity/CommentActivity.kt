@@ -26,7 +26,7 @@ class CommentActivity : DaggerAppCompatActivity(), CommentView {
     @Inject
     lateinit var commentPresenter: CommentPresenter
 
-    private var commentList = ArrayList<Comment>()
+    private val commentList = ArrayList<Comment>()
     private lateinit var commentAdapter: CommentAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
