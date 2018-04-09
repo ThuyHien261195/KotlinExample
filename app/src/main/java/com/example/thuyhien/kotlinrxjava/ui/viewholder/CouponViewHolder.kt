@@ -11,24 +11,12 @@ import java.lang.ref.WeakReference
 /**
  * Created by thuyhien on 3/21/18.
  */
-class CouponViewHolder(containerView : View, couponsActivityListener: CouponsActivityListener)
+class CouponViewHolder(containerView : View)
     : BaseViewHolder<Coupon>(containerView) {
-    private var listenerWeakRef = WeakReference<CouponsActivityListener>(couponsActivityListener)
-    private lateinit var coupon : Coupon
-
-    init {
-        containerView.setOnClickListener({
-            getCouponActivityListener()?.onClickCoupon(coupon)
-        })
-    }
-
     override fun bind(data: Coupon) {
-        coupon = data
         tvStore.text = data.store
         tvInfo.text = data.coupon
         tvDate.text = data.expiryDate
         tvCode.text = data.couponCode
     }
-
-    private fun getCouponActivityListener() = listenerWeakRef.get()
 }

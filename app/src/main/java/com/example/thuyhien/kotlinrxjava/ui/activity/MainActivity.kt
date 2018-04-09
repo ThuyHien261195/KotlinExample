@@ -63,7 +63,7 @@ class MainActivity : DaggerAppCompatActivity(), CouponView, CouponsActivityListe
     }
 
     override fun onClickCoupon(coupon: Coupon) {
-        Toast.makeText(this, "Store coupon: " + coupon.couponCode, Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "Store coupon: ${coupon.couponCode}", Toast.LENGTH_LONG).show()
     }
 
     private fun initView() {
