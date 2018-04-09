@@ -8,6 +8,8 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import com.example.thuyhien.kotlinrxjava.R
+import com.example.thuyhien.kotlinrxjava.extension.gone
+import com.example.thuyhien.kotlinrxjava.extension.visible
 import com.example.thuyhien.kotlinrxjava.model.Coupon
 import com.example.thuyhien.kotlinrxjava.presenter.CouponPresenter
 import com.example.thuyhien.kotlinrxjava.ui.adapter.CouponAdapter
@@ -55,11 +57,11 @@ class MainActivity : DaggerAppCompatActivity(), CouponView, CouponsActivityListe
     }
 
     override fun showLoading() {
-        progressBarLoading.visibility = View.VISIBLE
+        progressBarLoading.visible()
     }
 
     override fun hideLoading() {
-        progressBarLoading.visibility = View.GONE
+        progressBarLoading.gone()
     }
 
     override fun onClickCoupon(coupon: Coupon) {

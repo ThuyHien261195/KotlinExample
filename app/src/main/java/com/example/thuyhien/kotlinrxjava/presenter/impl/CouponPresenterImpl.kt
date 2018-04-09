@@ -5,6 +5,7 @@ import android.net.ConnectivityManager
 import android.util.Log
 import com.example.thuyhien.kotlinrxjava.data.interactor.LoadDataInteractor
 import com.example.thuyhien.kotlinrxjava.data.interactor.listener.LoadDataListener
+import com.example.thuyhien.kotlinrxjava.extension.hasInternetConnection
 import com.example.thuyhien.kotlinrxjava.localDatabase.interactor.SQLiteInteractor
 import com.example.thuyhien.kotlinrxjava.localDatabase.interactor.listener.SQLiteListener
 import com.example.thuyhien.kotlinrxjava.model.Coupon
@@ -29,7 +30,7 @@ class CouponPresenterImpl
     override fun getCouponList() {
         showLoading()
 
-        if (checkInternet()) {
+        if (context.hasInternetConnection()) {
             Log.e("2359 ", "has internet")
             loadDataInteractor.getTopCoupons(this)
         } else {
@@ -64,11 +65,6 @@ class CouponPresenterImpl
     override fun onLoadDataFail(ex: Exception) {
         getCouponView()?.hideLoading()
         getCouponView()?.showError(ex.message!!)
-    }
-
-    private fun checkInternet(): Boolean {
-        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        return connectivityManager.activeNetworkInfo != null && connectivityManager.activeNetworkInfo.isConnected
     }
 
     private fun showLoading() {
