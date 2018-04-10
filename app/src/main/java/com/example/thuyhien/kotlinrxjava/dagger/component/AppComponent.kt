@@ -14,7 +14,8 @@ import javax.inject.Singleton
  */
 
 @Singleton
-@Component(modules = arrayOf(AppModule::class,
+@Component(modules = arrayOf(
+        AppModule::class,
         NetModule::class,
         SQLiteModule::class,
         WebSocketModule::class,
@@ -23,9 +24,9 @@ import javax.inject.Singleton
 interface AppComponent : AndroidInjector<DaggerApplication> {
     @Component.Builder
     interface Builder {
-        fun build() : AppComponent
+        fun build(): AppComponent
 
         @BindsInstance
-        fun bindsApplication(context: Context) : Builder
+        fun bindsApplication(context: Context): Builder
     }
 }

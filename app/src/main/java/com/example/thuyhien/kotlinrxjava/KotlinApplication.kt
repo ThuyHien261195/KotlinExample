@@ -10,11 +10,7 @@ import dagger.android.support.DaggerApplication
  */
 class KotlinApplication : DaggerApplication() {
 
-    private lateinit var appComponent : AppComponent
-
-    fun getAppComponent() : AppComponent {
-        return appComponent
-    }
+    private lateinit var appComponent: AppComponent
 
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
         appComponent = DaggerAppComponent.builder()
