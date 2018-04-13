@@ -1,10 +1,7 @@
 package com.example.thuyhien.kotlinrxjava.dagger.module
 
 import com.example.thuyhien.kotlinrxjava.dagger.scope.ActivityScope
-import com.example.thuyhien.kotlinrxjava.ui.activity.CommentActivity
-import com.example.thuyhien.kotlinrxjava.ui.activity.CouponActivity
-import com.example.thuyhien.kotlinrxjava.ui.activity.ExampleServiceActivity
-import com.example.thuyhien.kotlinrxjava.ui.activity.MainActivity
+import com.example.thuyhien.kotlinrxjava.ui.activity.*
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -29,4 +26,8 @@ abstract class ActivityBuilderModule {
     @ActivityScope
     @ContributesAndroidInjector(modules = arrayOf(ExampleServiceModule::class))
     abstract fun bindsExampleServiceActivity(): ExampleServiceActivity
+
+    @ActivityScope
+    @ContributesAndroidInjector(modules = arrayOf(BoundServiceModule::class))
+    abstract fun bindsBoundServiceActivity(): BoundServiceActivity
 }
