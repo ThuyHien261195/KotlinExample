@@ -9,6 +9,7 @@ import com.example.thuyhien.kotlinrxjava.localDatabase.interactor.SQLiteInteract
 import com.example.thuyhien.kotlinrxjava.localDatabase.interactor.listener.SQLiteListener
 import com.example.thuyhien.kotlinrxjava.model.Coupon
 import com.example.thuyhien.kotlinrxjava.presenter.CouponPresenter
+import com.example.thuyhien.kotlinrxjava.ui.activity.CouponActivity
 import com.example.thuyhien.kotlinrxjava.ui.activity.MainActivity
 import com.example.thuyhien.kotlinrxjava.view.CouponView
 import java.lang.ref.WeakReference
@@ -18,13 +19,13 @@ import javax.inject.Inject
  * Created by thuyhien on 3/21/18.
  */
 class CouponPresenterImpl
-@Inject constructor(mainActivity: MainActivity,
+@Inject constructor(couponActivity: CouponActivity,
                     private val loadDataInteractor: LoadDataInteractor,
                     private val sqliteInteractor: SQLiteInteractor,
                     private val context: Context)
     : CouponPresenter, LoadDataListener<List<Coupon>> {
 
-    private val couponViewWeakRef: WeakReference<CouponView> = WeakReference(mainActivity)
+    private val couponViewWeakRef: WeakReference<CouponView> = WeakReference(couponActivity)
 
     override fun getCouponList() {
         showLoading()
