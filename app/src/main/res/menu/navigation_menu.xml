@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/action_coupon"
+            android:title="@string/action_view_coupons" />
+        <item
+            android:id="@+id/action_socket"
+            android:title="@string/action_web_socket" />
+        <item
+            android:id="@+id/action_service"
+            android:title="@string/action_socket" />
+    </group>
+</menu>

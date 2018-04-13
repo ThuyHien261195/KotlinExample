@@ -2,73 +2,53 @@ package com.example.thuyhien.kotlinrxjava.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
-import android.view.Menu
+import android.support.v4.view.GravityCompat
 import android.view.MenuItem
-import android.widget.Toast
 import com.example.thuyhien.kotlinrxjava.R
-import com.example.thuyhien.kotlinrxjava.extensions.gone
-import com.example.thuyhien.kotlinrxjava.extensions.visible
-import com.example.thuyhien.kotlinrxjava.model.Coupon
-import com.example.thuyhien.kotlinrxjava.presenter.CouponPresenter
-import com.example.thuyhien.kotlinrxjava.ui.adapter.CouponAdapter
-import com.example.thuyhien.kotlinrxjava.ui.listener.CouponsActivityListener
-import com.example.thuyhien.kotlinrxjava.view.CouponView
+import com.example.thuyhien.kotlinrxjava.view.MainView
 import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import javax.inject.Inject
 
-class MainActivity : DaggerAppCompatActivity(), CouponView, CouponsActivityListener {
-    @Inject
-    lateinit var couponPresenter: CouponPresenter
+class MainActivity : DaggerAppCompatActivity(), MainView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        initView()
-        couponPresenter.getCouponList()
-    }
+        navView.setNavigationItemSelectedListener { menuItem ->
+            menuItem.isChecked = true
 
-    private fun initView() {
-        val couponLayoutManager = LinearLayoutManager(this)
-        rvCoupon.layoutManager = couponLayoutManager
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when (item?.itemId) {
-            R.id.test_web_socket -> {
-                val intent = Intent(this, CommentActivity::class.java)
-                startActivity(intent)
+            when (menuItem.itemId) {
+                R.id.action_coupon -> {
+                    val intent = Intent(this, CouponActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.action_socket -> {
+                    val intent = Intent(this, CommentActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.action_service -> {
+                    val intent = Intent(this, ExampleServiceActivity::class.java)
+                    startActivity(intent)
+                }
             }
-            else -> return true
+
+            drawerLayout.closeDrawers()
+            true
         }
-        return true
+        setSupportActionBar(toolbarMain)
+        val actionBar = supportActionBar
+        actionBar?.setDisplayHomeAsUpEnabled(true)
+        actionBar?.setHomeAsUpIndicator(R.mipmap.ic_menu_black_24dp)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.main_menu, menu)
-        return true
-    }
-
-    override fun displayCouponList(couponList: List<Coupon>) {
-        val couponAdapter = CouponAdapter(couponList, this)
-        rvCoupon.adapter = couponAdapter
-    }
-
-    override fun showError(error: String) {
-        Toast.makeText(this, "Store coupon: $error", Toast.LENGTH_LONG).show()
-    }
-
-    override fun showLoading() {
-        progressBarLoading.visible()
-    }
-
-    override fun hideLoading() {
-        progressBarLoading.gone()
-    }
-
-    override fun onClickCoupon(coupon: Coupon) {
-        Toast.makeText(this, "Store coupon: ${coupon.couponCode}", Toast.LENGTH_LONG).show()
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean = when (item?.itemId) {
+        android.R.id.home -> {
+            drawerLayout.openDrawer(GravityCompat.START)
+            true
+        }
+        else -> super.onOptionsItemSelected(item)
     }
 }
+
+
