@@ -34,6 +34,9 @@ class PlayerInService : Service() {
         initMediaListener()
         Log.e(LOG_TAG, "OnStartCommand")
         return START_NOT_STICKY
+
+        // START_STICKY: hanlde stop, effect pin
+        // START_NOT_STICKY: stop after close completely app
     }
 
     override fun onBind(intent: Intent?): IBinder? = null
