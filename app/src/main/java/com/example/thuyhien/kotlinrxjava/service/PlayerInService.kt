@@ -18,6 +18,7 @@ class PlayerInService : Service() {
 
     lateinit var filePath: String
     companion object {
+        val LOG_TAG = "2359Service"
         lateinit var mediaPlayer: MediaPlayer
     }
 
@@ -25,13 +26,13 @@ class PlayerInService : Service() {
         super.onCreate()
         mediaPlayer = MediaPlayer()
         mediaPlayer.reset()
-        Log.e("2359", "On create service")
+        Log.e("2359", "OnCreateService")
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         getData(intent!!)
         initMediaListener()
-        Log.e("2359", "On start command")
+        Log.e(LOG_TAG, "OnStartCommand")
         return START_NOT_STICKY
     }
 
@@ -50,7 +51,7 @@ class PlayerInService : Service() {
         try {
             mediaPlayer = MediaPlayer.create(this, R.raw.example_song)
         } catch (e : Exception) {
-            Log.e("2359", "Cannot set data source ${e.message}")
+            Log.e(LOG_TAG, "Cannot set data source ${e.message}")
         }
         mediaPlayer.start()
         mediaPlayer.setOnCompletionListener { mp ->  }
