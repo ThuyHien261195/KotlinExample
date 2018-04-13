@@ -33,7 +33,7 @@ kapt {
 }
 
 ext {
-    androidSupportLib = '26.1.0'
+    androidSupportLib = '27.1.1'
     daggerVersion = '2.15'
 }
 
@@ -41,6 +41,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation "com.android.support:appcompat-v7:${androidSupportLib}"
+    implementation "com.android.support:design:${androidSupportLib}"
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'

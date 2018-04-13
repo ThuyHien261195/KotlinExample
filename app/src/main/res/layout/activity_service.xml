@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.thuyhien.kotlinrxjava.ui.activity.ExampleServiceActivity">
+
+    <TextView android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/tvSongTitle"
+        android:textSize="@dimen/title_song_text_size"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:padding="@dimen/layout_action_music_padding"
+        android:text="Title Song"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <ImageButton
+            android:id="@+id/btnPrevious"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/description_previous_image"
+            android:src="@drawable/ic_skip_previous_black_24dp"
+            android:background="@android:color/transparent"
+            android:padding="@dimen/layout_action_music_padding" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnPlay"
+            android:contentDescription="@string/description_play_image"
+            android:src="@drawable/ic_play_circle_outline_black_24dp"
+            android:background="@android:color/transparent"
+            android:padding="@dimen/layout_action_music_padding" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnNext"
+            android:contentDescription="@string/description_next_image"
+            android:src="@drawable/ic_skip_next_black_24dp"
+            android:background="@android:color/transparent"
+            android:padding="@dimen/layout_action_music_padding" />
+    </LinearLayout>
+</RelativeLayout>
