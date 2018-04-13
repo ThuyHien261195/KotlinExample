@@ -22,13 +22,11 @@ class ExampleServiceActivity : DaggerAppCompatActivity(), ExampleServiceView {
 
     var isPlaying = false;
 
-    private lateinit var mediaPlayer: MediaPlayer
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_service)
 
-        btnPlay.setOnClickListener { view ->
+        btnPlay.setOnClickListener {
             if (!isPlaying) {
                 startService()
                 Log.e(LOG_TAG, "Start play")
