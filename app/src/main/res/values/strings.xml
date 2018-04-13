@@ -2,4 +2,12 @@
     <string name="app_name">KotLinRxjava</string>
     <string name="action_web_socket">Web socket...</string>
     <string name="hint_comment">Comment</string>
+    <string name="action_view_coupons">View coupons</string>
+    <string name="action_socket">Service</string>
+    <string name="sample_navigation">Sample navigation</string>
+    <string name="action_print_timestamp">Print Timestamp</string>
+    <string name="action_stop_service">Stop service</string>
+    <string name="description_previous_image">Previous button</string>
+    <string name="description_play_image">Play button</string>
+    <string name="description_next_image">Next button</string>
 </resources>

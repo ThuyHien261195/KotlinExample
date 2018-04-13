@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="small_space">5dp</dimen>
+    <dimen name="medium_space">10dp</dimen>
+    <dimen name="large_space">20dp</dimen>
+    <dimen name="x_large_space">30dp</dimen>
+    <dimen name="xx_large_space">40dp</dimen>
+
+    <dimen name="nav_header_height">150dp</dimen>
+    <dimen name="layout_action_music_padding">@dimen/medium_space</dimen>
+
+    <!-- textsize -->
+    <dimen name="title_song_text_size">15sp</dimen>
+    <dimen name="title_time_stamp_text_size">20sp</dimen>
+</resources>
