@@ -1,4 +1,4 @@
-package com.example.thuyhien.kotlinrxjava.dagger.module
+package com.example.thuyhien.kotlinrxjava.dagger.module.acitivity
 
 import com.example.thuyhien.kotlinrxjava.dagger.scope.ActivityScope
 import com.example.thuyhien.kotlinrxjava.ui.activity.MainActivity

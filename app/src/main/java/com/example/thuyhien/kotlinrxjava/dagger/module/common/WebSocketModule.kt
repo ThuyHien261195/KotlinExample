@@ -1,4 +1,4 @@
-package com.example.thuyhien.kotlinrxjava.dagger.module
+package com.example.thuyhien.kotlinrxjava.dagger.module.common
 
 import com.example.thuyhien.kotlinrxjava.webSocket.KotlinWebSocketListener
 import com.example.thuyhien.kotlinrxjava.webSocket.ServerConnection

@@ -1,4 +1,4 @@
-package com.example.thuyhien.kotlinrxjava.dagger.module
+package com.example.thuyhien.kotlinrxjava.dagger.module.common
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder

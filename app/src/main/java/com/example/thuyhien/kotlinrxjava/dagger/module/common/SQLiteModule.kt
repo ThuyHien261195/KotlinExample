@@ -1,4 +1,4 @@
-package com.example.thuyhien.kotlinrxjava.dagger.module
+package com.example.thuyhien.kotlinrxjava.dagger.module.common
 
 import android.content.Context
 import com.example.thuyhien.kotlinrxjava.KotlinApplication

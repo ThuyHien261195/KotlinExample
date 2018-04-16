@@ -1,5 +1,6 @@
-package com.example.thuyhien.kotlinrxjava.dagger.module
+package com.example.thuyhien.kotlinrxjava.dagger.module.common
 
+import com.example.thuyhien.kotlinrxjava.dagger.module.acitivity.*
 import com.example.thuyhien.kotlinrxjava.dagger.scope.ActivityScope
 import com.example.thuyhien.kotlinrxjava.ui.activity.*
 import dagger.Module
@@ -30,4 +31,8 @@ abstract class ActivityBuilderModule {
     @ActivityScope
     @ContributesAndroidInjector(modules = arrayOf(BoundServiceModule::class))
     abstract fun bindsBoundServiceActivity(): BoundServiceActivity
+
+    @ActivityScope
+    @ContributesAndroidInjector(modules = arrayOf(CountModule::class))
+    abstract fun bindsCountActivity(): CountActivity
 }
