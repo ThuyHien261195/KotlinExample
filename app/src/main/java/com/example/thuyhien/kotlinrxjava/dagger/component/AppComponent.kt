@@ -1,7 +1,7 @@
 package com.example.thuyhien.kotlinrxjava.dagger.component
 
 import android.content.Context
-import com.example.thuyhien.kotlinrxjava.dagger.module.*
+import com.example.thuyhien.kotlinrxjava.dagger.module.common.*
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
