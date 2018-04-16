@@ -35,4 +35,8 @@ abstract class ActivityBuilderModule {
     @ActivityScope
     @ContributesAndroidInjector(modules = arrayOf(CountModule::class))
     abstract fun bindsCountActivity(): CountActivity
+
+    @ActivityScope
+    @ContributesAndroidInjector(modules = arrayOf(AlarmModule::class))
+    abstract fun bindsAlarmActivity(): AlarmActivity
 }
