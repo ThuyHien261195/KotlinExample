@@ -4,13 +4,12 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.IBinder
 import android.util.Log
 import com.example.thuyhien.kotlinrxjava.R
 import com.example.thuyhien.kotlinrxjava.service.BoundService
-import com.example.thuyhien.kotlinrxjava.service.BoundService.Companion.LOG_TAG
+import com.example.thuyhien.kotlinrxjava.service.BoundService.Companion.LOG_TAG_BOUND_SERVICE
 import com.example.thuyhien.kotlinrxjava.view.BoundServiceView
 import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_bound_service.*
@@ -57,14 +56,14 @@ class BoundServiceActivity : DaggerAppCompatActivity(), BoundServiceView {
     private var serviceConnection = object: ServiceConnection {
         override fun onServiceDisconnected(name: ComponentName?) {
             serviceBound = false
-            Log.e(LOG_TAG, "onServiceDisconnected")
+            Log.e(LOG_TAG_BOUND_SERVICE, "onServiceDisconnected")
         }
 
         override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
             val timeStampBinder = service as BoundService.TimeStampBinder
             boundService = timeStampBinder.getService()
             serviceBound = true
-            Log.e(LOG_TAG, "onServiceConnected")
+            Log.e(LOG_TAG_BOUND_SERVICE, "onServiceConnected")
         }
     }
 }

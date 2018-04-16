@@ -1,14 +1,12 @@
 package com.example.thuyhien.kotlinrxjava.ui.activity
 
 import android.content.Intent
-import android.media.MediaPlayer
 import android.net.Uri
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.example.thuyhien.kotlinrxjava.R
 import com.example.thuyhien.kotlinrxjava.service.PlayerInService
-import com.example.thuyhien.kotlinrxjava.service.PlayerInService.Companion.LOG_TAG
+import com.example.thuyhien.kotlinrxjava.service.PlayerInService.Companion.LOG_TAG_SERVICE
 import com.example.thuyhien.kotlinrxjava.view.ExampleServiceView
 import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_service.*
@@ -29,7 +27,7 @@ class ExampleServiceActivity : DaggerAppCompatActivity(), ExampleServiceView {
         btnPlay.setOnClickListener {
             if (!isPlaying) {
                 startService()
-                Log.e(LOG_TAG, "Start play")
+                Log.e(LOG_TAG_SERVICE, "Start play")
             } else {
                 stopService()
             }

@@ -13,7 +13,7 @@ import android.widget.Chronometer
  */
 class BoundService : Service() {
     companion object {
-        val LOG_TAG = "2359BoundService"
+        const val LOG_TAG_BOUND_SERVICE = "2359BoundService"
     }
 
     val timeStampBinder = TimeStampBinder()
@@ -23,30 +23,30 @@ class BoundService : Service() {
 
     override fun onCreate() {
         super.onCreate()
-        Log.e(LOG_TAG, "OnCreate")
+        Log.e(LOG_TAG_BOUND_SERVICE, "OnCreate")
         chronometer = Chronometer(this)
         chronometer.base = SystemClock.elapsedRealtime()
         chronometer.start()
     }
 
     override fun onBind(intent: Intent?): IBinder {
-        Log.e(LOG_TAG, "OnBind")
+        Log.e(LOG_TAG_BOUND_SERVICE, "OnBind")
         return timeStampBinder
     }
 
     override fun onRebind(intent: Intent?) {
-        Log.e(LOG_TAG, "onRebind")
+        Log.e(LOG_TAG_BOUND_SERVICE, "onRebind")
         super.onRebind(intent)
     }
 
     override fun onUnbind(intent: Intent?): Boolean {
-        Log.e(LOG_TAG, "onUnbind")
+        Log.e(LOG_TAG_BOUND_SERVICE, "onUnbind")
         return true
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.e(LOG_TAG, "onDestroy")
+        Log.e(LOG_TAG_BOUND_SERVICE, "onDestroy")
         chronometer.stop()
     }
 
