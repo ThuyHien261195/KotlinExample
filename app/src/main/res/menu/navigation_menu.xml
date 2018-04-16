@@ -13,5 +13,8 @@
         <item
             android:id="@+id/action_bound_service"
             android:title="@string/action_bound_service" />
+        <item
+            android:id="@+id/action_count_intent_service"
+            android:title="@string/action_count_intent_service" />
     </group>
 </menu>

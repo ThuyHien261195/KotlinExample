@@ -27,7 +27,9 @@
 
         <service android:name=".service.PlayerInService" />
         <service android:name=".service.BoundService" />
+        <service android:name=".service.CountIntentService" android:exported="false" />
 
+        <activity android:name=".ui.activity.CountActivity"></activity>
     </application>
 
 </manifest>

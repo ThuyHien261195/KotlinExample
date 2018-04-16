@@ -35,6 +35,10 @@ class MainActivity : DaggerAppCompatActivity(), MainView {
                     val intent = Intent(this, BoundServiceActivity::class.java)
                     startActivity(intent)
                 }
+                R.id.action_count_intent_service -> {
+                    val intent = Intent(this, CountActivity::class.java)
+                    startActivity(intent)
+                }
             }
 
             drawerLayout.closeDrawers()
