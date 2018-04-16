@@ -16,5 +16,8 @@
         <item
             android:id="@+id/action_count_intent_service"
             android:title="@string/action_count_intent_service" />
+        <item
+            android:id="@+id/action_alarm"
+            android:title="@string/action_schedule_alarm" />
     </group>
 </menu>

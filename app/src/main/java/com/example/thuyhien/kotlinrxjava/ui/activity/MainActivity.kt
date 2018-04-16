@@ -39,6 +39,10 @@ class MainActivity : DaggerAppCompatActivity(), MainView {
                     val intent = Intent(this, CountActivity::class.java)
                     startActivity(intent)
                 }
+                R.id.action_alarm -> {
+                    val intent = Intent(this, AlarmActivity::class.java)
+                    startActivity(intent)
+                }
             }
 
             drawerLayout.closeDrawers()

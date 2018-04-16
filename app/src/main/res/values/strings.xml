@@ -13,4 +13,6 @@
     <string name="action_bound_service">Bound service</string>
     <string name="action_start_count">Start count</string>
     <string name="action_count_intent_service">Count intent service</string>
+    <string name="action_schedule_alarm">Schedule Alarm</string>
+    <string name="action_cancel_alarm">Cancel Alarm</string>
 </resources>
