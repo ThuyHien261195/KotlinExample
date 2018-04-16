@@ -15,7 +15,7 @@ class PlayerInService : Service() {
 
     lateinit var filePath: String
     companion object {
-        const val LOG_TAG_SERVICE = "2359Service"
+        const val TAG_LOG_SERVICE = "2359Service"
         lateinit var mediaPlayer: MediaPlayer
     }
 
@@ -29,7 +29,7 @@ class PlayerInService : Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         getData(intent!!)
         initMediaListener()
-        Log.e(LOG_TAG_SERVICE, "OnStartCommand")
+        Log.e(TAG_LOG_SERVICE, "OnStartCommand")
         return START_NOT_STICKY
 
         // START_STICKY: hanlde stop, effect pin
@@ -41,7 +41,7 @@ class PlayerInService : Service() {
     override fun onDestroy() {
         mediaPlayer.stop()
         mediaPlayer.release()
-        Log.e(LOG_TAG_SERVICE, "OnDestroy")
+        Log.e(TAG_LOG_SERVICE, "OnDestroy")
     }
 
     private fun getData(intent: Intent) {
@@ -52,7 +52,7 @@ class PlayerInService : Service() {
         try {
             mediaPlayer = MediaPlayer.create(this, R.raw.example_song)
         } catch (e : Exception) {
-            Log.e(LOG_TAG_SERVICE, "Cannot set data source ${e.message}")
+            Log.e(TAG_LOG_SERVICE, "Cannot set data source ${e.message}")
         }
         mediaPlayer.start()
         mediaPlayer.setOnCompletionListener { mp ->  }

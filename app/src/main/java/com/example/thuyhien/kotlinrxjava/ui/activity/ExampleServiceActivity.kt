@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import com.example.thuyhien.kotlinrxjava.R
 import com.example.thuyhien.kotlinrxjava.service.PlayerInService
-import com.example.thuyhien.kotlinrxjava.service.PlayerInService.Companion.LOG_TAG_SERVICE
+import com.example.thuyhien.kotlinrxjava.service.PlayerInService.Companion.TAG_LOG_SERVICE
 import com.example.thuyhien.kotlinrxjava.view.ExampleServiceView
 import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_service.*
@@ -27,7 +27,7 @@ class ExampleServiceActivity : DaggerAppCompatActivity(), ExampleServiceView {
         btnPlay.setOnClickListener {
             if (!isPlaying) {
                 startService()
-                Log.e(LOG_TAG_SERVICE, "Start play")
+                Log.e(TAG_LOG_SERVICE, "Start play")
             } else {
                 stopService()
             }
