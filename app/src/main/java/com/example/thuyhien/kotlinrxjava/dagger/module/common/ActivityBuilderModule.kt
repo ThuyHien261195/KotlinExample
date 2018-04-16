@@ -31,8 +31,4 @@ abstract class ActivityBuilderModule {
     @ActivityScope
     @ContributesAndroidInjector(modules = arrayOf(BoundServiceModule::class))
     abstract fun bindsBoundServiceActivity(): BoundServiceActivity
-
-    @ActivityScope
-    @ContributesAndroidInjector(modules = arrayOf(CountModule::class))
-    abstract fun bindsCountActivity(): CountActivity
 }
