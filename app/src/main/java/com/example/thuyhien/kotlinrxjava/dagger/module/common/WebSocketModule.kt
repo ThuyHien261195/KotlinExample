@@ -1,6 +1,8 @@
 package com.example.thuyhien.kotlinrxjava.dagger.module.common
 
+import android.content.Context
 import com.example.thuyhien.kotlinrxjava.webSocket.KotlinWebSocketListener
+import com.example.thuyhien.kotlinrxjava.webSocket.LocalBroadcastServerConnection
 import com.example.thuyhien.kotlinrxjava.webSocket.ServerConnection
 import dagger.Module
 import dagger.Provides
@@ -32,8 +34,15 @@ abstract class WebSocketModule {
         @Provides
         @JvmStatic
         @Singleton
-        fun provideConnectionStatus(okHttpClient: OkHttpClient) : ServerConnection {
+        fun provideServerConnection(okHttpClient: OkHttpClient) : ServerConnection {
             return ServerConnection(okHttpClient)
+        }
+
+        @Provides
+        @JvmStatic
+        @Singleton
+        fun provideLocalBroadcastServerConnection(okHttpClient: OkHttpClient, context: Context) : LocalBroadcastServerConnection {
+            return LocalBroadcastServerConnection(okHttpClient, context)
         }
     }
 }
