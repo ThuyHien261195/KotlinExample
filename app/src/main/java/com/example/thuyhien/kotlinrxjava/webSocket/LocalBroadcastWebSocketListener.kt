@@ -4,15 +4,11 @@ import android.content.Context
 import android.content.Intent
 import android.support.v4.content.LocalBroadcastManager
 import android.util.Log
-import com.example.thuyhien.kotlinrxjava.EventBus.ConnectionEvent
-import com.example.thuyhien.kotlinrxjava.EventBus.MessageEvent
-import com.example.thuyhien.kotlinrxjava.model.Comment
 import com.example.thuyhien.kotlinrxjava.model.enum.ConnectionStatus
 import okhttp3.Response
 import okhttp3.WebSocket
 import okhttp3.WebSocketListener
 import okio.ByteString
-import org.greenrobot.eventbus.EventBus
 import java.lang.ref.WeakReference
 
 /**

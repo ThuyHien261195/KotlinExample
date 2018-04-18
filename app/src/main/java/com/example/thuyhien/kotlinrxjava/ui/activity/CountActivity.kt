@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
-import android.os.ResultReceiver
 import com.example.thuyhien.kotlinrxjava.R
 import com.example.thuyhien.kotlinrxjava.presenter.CountPresenter
 import com.example.thuyhien.kotlinrxjava.service.CountIntentService

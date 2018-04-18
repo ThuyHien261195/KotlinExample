@@ -10,7 +10,6 @@ import com.example.thuyhien.kotlinrxjava.localDatabase.interactor.listener.SQLit
 import com.example.thuyhien.kotlinrxjava.model.Coupon
 import com.example.thuyhien.kotlinrxjava.presenter.CouponPresenter
 import com.example.thuyhien.kotlinrxjava.ui.activity.CouponActivity
-import com.example.thuyhien.kotlinrxjava.ui.activity.MainActivity
 import com.example.thuyhien.kotlinrxjava.view.CouponView
 import java.lang.ref.WeakReference
 import javax.inject.Inject

@@ -3,7 +3,6 @@ package com.example.thuyhien.kotlinrxjava.webSocket
 import android.content.Context
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import okhttp3.WebSocket
 
 /**
  * Created by thuyhien on 4/18/18.

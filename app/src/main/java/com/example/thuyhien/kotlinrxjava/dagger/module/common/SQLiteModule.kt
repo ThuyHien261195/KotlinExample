@@ -1,12 +1,10 @@
 package com.example.thuyhien.kotlinrxjava.dagger.module.common
 
 import android.content.Context
-import com.example.thuyhien.kotlinrxjava.KotlinApplication
 import com.example.thuyhien.kotlinrxjava.localDatabase.interactor.SQLiteInteractor
 import com.example.thuyhien.kotlinrxjava.localDatabase.interactor.impl.SQLiteInteractorImpl
 import dagger.Module
 import dagger.Provides
-import javax.inject.Singleton
 
 /**
  * Created by thuyhien on 3/26/18.

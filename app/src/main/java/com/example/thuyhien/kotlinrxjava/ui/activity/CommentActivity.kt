@@ -1,11 +1,7 @@
 package com.example.thuyhien.kotlinrxjava.ui.activity
 
-import android.content.BroadcastReceiver
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Message
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.widget.Toast
 import com.example.thuyhien.kotlinrxjava.EventBus.ConnectionEvent
 import com.example.thuyhien.kotlinrxjava.EventBus.MessageEvent
@@ -14,10 +10,8 @@ import com.example.thuyhien.kotlinrxjava.model.Comment
 import com.example.thuyhien.kotlinrxjava.presenter.CommentPresenter
 import com.example.thuyhien.kotlinrxjava.ui.adapter.CommentAdapter
 import com.example.thuyhien.kotlinrxjava.view.CommentView
-import dagger.android.DaggerActivity
 import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_comment.*
-import kotlinx.android.synthetic.main.item_comment.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode

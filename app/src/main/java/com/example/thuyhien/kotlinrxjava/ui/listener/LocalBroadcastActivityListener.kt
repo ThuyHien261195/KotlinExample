@@ -1,7 +1,6 @@
 package com.example.thuyhien.kotlinrxjava.ui.listener
 
 import com.example.thuyhien.kotlinrxjava.model.Comment
-import com.example.thuyhien.kotlinrxjava.model.StoreCoupons
 
 /**
  * Created by thuyhien on 4/17/18.

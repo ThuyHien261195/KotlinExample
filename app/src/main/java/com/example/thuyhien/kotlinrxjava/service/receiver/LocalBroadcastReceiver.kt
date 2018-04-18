@@ -5,7 +5,6 @@ import android.content.Context
 import android.content.Intent
 import android.util.Log
 import com.example.thuyhien.kotlinrxjava.model.Comment
-import com.example.thuyhien.kotlinrxjava.ui.activity.LocalBroadcastActivity
 import com.example.thuyhien.kotlinrxjava.ui.listener.LocalBroadcastActivityListener
 import com.example.thuyhien.kotlinrxjava.webSocket.LocalBroadcastWebSocketListener
 import com.example.thuyhien.kotlinrxjava.webSocket.LocalBroadcastWebSocketListener.Companion.TAG_LOG_LOCAL_BROADCAST

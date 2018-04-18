@@ -6,7 +6,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.ResultReceiver
 import android.util.Log
-import com.example.thuyhien.kotlinrxjava.service.receiver.CountResultReceiver
 import com.example.thuyhien.kotlinrxjava.ui.activity.CountActivity
 import com.example.thuyhien.kotlinrxjava.ui.activity.CountActivity.Companion.EXTRA_MAX_NUMBER
 

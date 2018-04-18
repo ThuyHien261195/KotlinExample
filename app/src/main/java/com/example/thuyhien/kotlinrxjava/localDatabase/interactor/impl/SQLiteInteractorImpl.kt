@@ -8,12 +8,12 @@ import com.example.thuyhien.kotlinrxjava.localDatabase.CouponDatabase
 import com.example.thuyhien.kotlinrxjava.localDatabase.interactor.SQLiteInteractor
 import com.example.thuyhien.kotlinrxjava.localDatabase.interactor.listener.SQLiteListener
 import com.example.thuyhien.kotlinrxjava.localDatabase.table.CouponEntry
-import com.example.thuyhien.kotlinrxjava.localDatabase.table.CouponEntry.TABLE_NAME
-import com.example.thuyhien.kotlinrxjava.localDatabase.table.CouponEntry.ID_COL
-import com.example.thuyhien.kotlinrxjava.localDatabase.table.CouponEntry.STORE_COL
+import com.example.thuyhien.kotlinrxjava.localDatabase.table.CouponEntry.COUPON_CODE_COL
 import com.example.thuyhien.kotlinrxjava.localDatabase.table.CouponEntry.COUPON_COL
 import com.example.thuyhien.kotlinrxjava.localDatabase.table.CouponEntry.EXPIRY_DATE_COL
-import com.example.thuyhien.kotlinrxjava.localDatabase.table.CouponEntry.COUPON_CODE_COL
+import com.example.thuyhien.kotlinrxjava.localDatabase.table.CouponEntry.ID_COL
+import com.example.thuyhien.kotlinrxjava.localDatabase.table.CouponEntry.STORE_COL
+import com.example.thuyhien.kotlinrxjava.localDatabase.table.CouponEntry.TABLE_NAME
 import com.example.thuyhien.kotlinrxjava.model.Coupon
 
 /**

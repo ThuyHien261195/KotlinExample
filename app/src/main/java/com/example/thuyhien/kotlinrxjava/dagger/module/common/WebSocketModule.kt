@@ -1,14 +1,11 @@
 package com.example.thuyhien.kotlinrxjava.dagger.module.common
 
 import android.content.Context
-import com.example.thuyhien.kotlinrxjava.webSocket.KotlinWebSocketListener
 import com.example.thuyhien.kotlinrxjava.webSocket.LocalBroadcastServerConnection
 import com.example.thuyhien.kotlinrxjava.webSocket.ServerConnection
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
-import okhttp3.Request
-import okhttp3.WebSocket
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
