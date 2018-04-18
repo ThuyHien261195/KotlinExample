@@ -11,7 +11,6 @@ import com.example.thuyhien.kotlinrxjava.service.AlarmService
 class AlarmReceiver : BroadcastReceiver() {
     companion object {
         const val REQUEST_CODE = 1
-        const val ACTION = "Alarm"
     }
 
     override fun onReceive(context: Context?, intent: Intent?) {

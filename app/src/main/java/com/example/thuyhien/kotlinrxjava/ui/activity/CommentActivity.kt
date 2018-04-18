@@ -1,5 +1,6 @@
 package com.example.thuyhien.kotlinrxjava.ui.activity
 
+import android.content.BroadcastReceiver
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Message
@@ -26,7 +27,6 @@ class CommentActivity : DaggerAppCompatActivity(), CommentView {
     @Inject
     lateinit var commentPresenter: CommentPresenter
 
-    private val commentList = ArrayList<Comment>()
     private lateinit var commentAdapter: CommentAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,15 +66,11 @@ class CommentActivity : DaggerAppCompatActivity(), CommentView {
         Toast.makeText(this, event.status, Toast.LENGTH_LONG).show()
     }
 
-    override fun showError(error: String) {
-        Toast.makeText(this, error, Toast.LENGTH_LONG).show()
-    }
-
     private fun initView() {
         val commentlayoutManager = LinearLayoutManager(this)
         rvComments.layoutManager = commentlayoutManager
 
-        commentAdapter = CommentAdapter(commentList)
+        commentAdapter = CommentAdapter(ArrayList<Comment>())
         rvComments.adapter = commentAdapter
 
         btnSend.setOnClickListener({

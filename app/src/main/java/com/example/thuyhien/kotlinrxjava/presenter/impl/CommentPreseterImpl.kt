@@ -11,9 +11,7 @@ import javax.inject.Inject
  * Created by thuyhien on 3/29/18.
  */
 class CommentPreseterImpl
-@Inject constructor(commentActivity: CommentActivity, private val serverConnection: ServerConnection) : CommentPresenter {
-
-    private val commentViewWeakRef = WeakReference<CommentView>(commentActivity)
+@Inject constructor(private val serverConnection: ServerConnection) : CommentPresenter {
 
     override fun connectServer() {
         serverConnection.connect()
@@ -26,6 +24,4 @@ class CommentPreseterImpl
     override fun sendMessageToServer(message: String) {
         serverConnection.sendMessage(message)
     }
-
-    private fun getCommentView() = commentViewWeakRef.get()
 }

@@ -10,7 +10,6 @@ import okhttp3.WebSocket
 import okhttp3.WebSocketListener
 import okio.ByteString
 import org.greenrobot.eventbus.EventBus
-import java.io.IOException
 
 /**
  * Created by thuyhien on 3/28/18.
@@ -60,7 +59,7 @@ class KotlinWebSocketListener : WebSocketListener() {
     }
 
     private fun receiveConnectionStatus(status: Any) {
-        var statusString = if (status == ConnectionStatus.CONNECTED) {
+        val statusString = if (status == ConnectionStatus.CONNECTED) {
             "Connected websocket"
         } else {
             "Disconnected websocket"

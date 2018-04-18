@@ -11,7 +11,4 @@ import dagger.Module
  */
 @Module
 abstract class BoundServiceModule {
-    @ActivityScope
-    @Binds
-    abstract fun provideBoundServiceView(boundServiceActivity: BoundServiceActivity) : BoundServiceView
 }

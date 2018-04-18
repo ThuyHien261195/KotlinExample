@@ -13,9 +13,6 @@ import dagger.Module
  */
 @Module
 abstract class CommentModule {
-    @ActivityScope
-    @Binds
-    abstract fun provideCommentView(commentActivity: CommentActivity): CommentView
 
     @Binds
     abstract fun provideCommentPresenter(commentPresenterImpl: CommentPreseterImpl) : CommentPresenter
