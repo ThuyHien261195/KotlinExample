@@ -7,11 +7,11 @@ import okhttp3.WebSocket
 /**
  * Created by thuyhien on 3/30/18.
  */
-class ServerConnection(var okHttpClient: OkHttpClient) {
-    private val serverUrl = "wss://echo.websocket.org"
-    private lateinit var webSocket: WebSocket
+open class ServerConnection(var okHttpClient: OkHttpClient) {
+    open val serverUrl = "wss://echo.websocket.org"
+    open lateinit var webSocket: WebSocket
 
-    fun connect() {
+    open fun connect() {
         val request = Request.Builder()
                 .url(serverUrl)
                 .build()
