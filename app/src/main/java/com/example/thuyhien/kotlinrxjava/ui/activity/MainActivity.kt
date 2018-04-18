@@ -43,6 +43,10 @@ class MainActivity : DaggerAppCompatActivity(), MainView {
                     val intent = Intent(this, AlarmActivity::class.java)
                     startActivity(intent)
                 }
+                R.id.action_local_broadcast -> {
+                    val intent = Intent(this, LocalBroadcastActivity::class.java)
+                    startActivity(intent)
+                }
             }
 
             drawerLayout.closeDrawers()

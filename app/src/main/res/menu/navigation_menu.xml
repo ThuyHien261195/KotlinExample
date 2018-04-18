@@ -19,5 +19,8 @@
         <item
             android:id="@+id/action_alarm"
             android:title="@string/action_schedule_alarm" />
+        <item
+            android:id="@+id/action_local_broadcast"
+            android:title="@string/action_local_broadcast" />
     </group>
 </menu>
