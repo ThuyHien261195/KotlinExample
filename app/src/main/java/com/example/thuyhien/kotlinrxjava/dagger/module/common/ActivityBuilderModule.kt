@@ -39,4 +39,8 @@ abstract class ActivityBuilderModule {
     @ActivityScope
     @ContributesAndroidInjector(modules = arrayOf(AlarmModule::class))
     abstract fun bindsAlarmActivity(): AlarmActivity
+
+    @ActivityScope
+    @ContributesAndroidInjector(modules = arrayOf(LocalBroadcastModule::class))
+    abstract fun bindsLocalBroadcastActivity(): LocalBroadcastActivity
 }
