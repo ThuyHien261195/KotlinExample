@@ -16,7 +16,7 @@ abstract class SQLiteModule {
     companion object {
         @Provides
         @JvmStatic
-        fun provideSQLiteInteractor(context: Context) : SQLiteInteractor {
+        fun provideSQLiteInteractor(context: Context): SQLiteInteractor {
             return SQLiteInteractorImpl(context)
         }
     }

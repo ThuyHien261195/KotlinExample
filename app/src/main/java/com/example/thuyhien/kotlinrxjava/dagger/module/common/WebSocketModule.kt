@@ -21,7 +21,7 @@ abstract class WebSocketModule {
         @Provides
         @JvmStatic
         @Singleton
-        fun provideOkHttpClient() : OkHttpClient {
+        fun provideOkHttpClient(): OkHttpClient {
             return OkHttpClient.Builder()
                     .readTimeout(3, TimeUnit.SECONDS)
                     .retryOnConnectionFailure(true)
@@ -31,14 +31,14 @@ abstract class WebSocketModule {
         @Provides
         @JvmStatic
         @Singleton
-        fun provideServerConnection(okHttpClient: OkHttpClient) : ServerConnection {
+        fun provideServerConnection(okHttpClient: OkHttpClient): ServerConnection {
             return ServerConnection(okHttpClient)
         }
 
         @Provides
         @JvmStatic
         @Singleton
-        fun provideLocalBroadcastServerConnection(okHttpClient: OkHttpClient, context: Context) : LocalBroadcastServerConnection {
+        fun provideLocalBroadcastServerConnection(okHttpClient: OkHttpClient, context: Context): LocalBroadcastServerConnection {
             return LocalBroadcastServerConnection(okHttpClient, context)
         }
     }

@@ -15,5 +15,5 @@ class CouponViewHolder(itemView: View) : BaseViewHolder<Coupon>(itemView) {
         tvDate.text = data.expiryDate
         tvCode.text = data.couponCode
     }
-    
+
 }

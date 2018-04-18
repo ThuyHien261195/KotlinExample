@@ -50,7 +50,7 @@ class BoundService : Service() {
         chronometer.stop()
     }
 
-    fun getTimestamp() : String {
+    fun getTimestamp(): String {
         countCheck++
         val elapsedMillis = SystemClock.elapsedRealtime() - chronometer.base
         val hours = (elapsedMillis / 3600000).toInt()
@@ -61,7 +61,7 @@ class BoundService : Service() {
     }
 
 
-    inner class TimeStampBinder: Binder() {
+    inner class TimeStampBinder : Binder() {
         fun getService(): BoundService {
             return this@BoundService
         }

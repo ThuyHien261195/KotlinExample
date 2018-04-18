@@ -11,5 +11,5 @@ import dagger.Module
 @Module
 abstract class LocalBroadcastModule {
     @Binds
-    abstract fun provideLocalBroadcastPresenter(localBroadcastPresenterImpl: LocalBroadcastPresenterImpl) : LocalBroadcastPresenter
+    abstract fun provideLocalBroadcastPresenter(localBroadcastPresenterImpl: LocalBroadcastPresenterImpl): LocalBroadcastPresenter
 }

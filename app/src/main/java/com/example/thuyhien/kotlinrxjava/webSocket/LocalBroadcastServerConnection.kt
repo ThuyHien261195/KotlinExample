@@ -7,7 +7,7 @@ import okhttp3.Request
 /**
  * Created by thuyhien on 4/18/18.
  */
-class LocalBroadcastServerConnection(okHttpClient: OkHttpClient, val context: Context): ServerConnection(okHttpClient) {
+class LocalBroadcastServerConnection(okHttpClient: OkHttpClient, val context: Context) : ServerConnection(okHttpClient) {
     override fun connect() {
         super.connect()
         val request = Request.Builder()

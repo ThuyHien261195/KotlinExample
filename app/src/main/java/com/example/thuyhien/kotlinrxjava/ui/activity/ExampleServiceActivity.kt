@@ -56,7 +56,7 @@ class ExampleServiceActivity : DaggerAppCompatActivity(), ExampleServiceView {
         }
     }
 
-    private fun createBundle() : Uri {
+    private fun createBundle(): Uri {
         val path = "android.resource://" + packageName + "/" + R.raw.example_song;
         return Uri.fromFile(File(path))
     }

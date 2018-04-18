@@ -8,7 +8,7 @@ import com.example.thuyhien.kotlinrxjava.service.listener.CountReceiverListener
 /**
  * Created by thuyhien on 4/13/18.
  */
-open class CountResultReceiver(handler: Handler, val countReceiverListener: CountReceiverListener?):
+open class CountResultReceiver(handler: Handler, val countReceiverListener: CountReceiverListener?) :
         ResultReceiver(handler) {
     override fun onReceiveResult(resultCode: Int, resultData: Bundle?) {
         countReceiverListener?.let {

@@ -17,11 +17,11 @@ class AlarmActivity : DaggerAppCompatActivity(), AlarmView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_alarm)
 
-        btnScheduleAlarm.setOnClickListener{
+        btnScheduleAlarm.setOnClickListener {
             scheduleAlarm()
         }
 
-        btnCancelAlarm.setOnClickListener{
+        btnCancelAlarm.setOnClickListener {
             cancelAlarm()
         }
     }

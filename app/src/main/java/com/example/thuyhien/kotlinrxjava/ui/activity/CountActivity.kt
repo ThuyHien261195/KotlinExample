@@ -18,6 +18,7 @@ class CountActivity : DaggerAppCompatActivity(), CountView {
     @Inject
     lateinit var countPresenter: CountPresenter
     lateinit var countResultReceiver: CountResultReceiver
+
     companion object {
         const val EXTRA_MAX_NUMBER = "MaxNumber"
         const val EXTRA_COUNT_RECEIVER = "CountReceiver"
@@ -29,7 +30,7 @@ class CountActivity : DaggerAppCompatActivity(), CountView {
 
         setupServiceReceiver()
 
-        btnStartCount.setOnClickListener{
+        btnStartCount.setOnClickListener {
             countPresenter.startCount()
         }
     }
@@ -42,10 +43,11 @@ class CountActivity : DaggerAppCompatActivity(), CountView {
     }
 
     private fun setupServiceReceiver() {
-        countResultReceiver = CountResultReceiver(Handler(), object: CountReceiverListener {
+        countResultReceiver = CountResultReceiver(Handler(), object : CountReceiverListener {
             override fun onCountReceiver(resultCode: Int, resultData: Bundle?) {
                 if (resultCode == Activity.RESULT_OK) {
-                    val resultValue = resultData?.getInt(CountIntentService.EXTRA_RESULT_NUMBER) ?: "Null"
+                    val resultValue = resultData?.getInt(CountIntentService.EXTRA_RESULT_NUMBER)
+                            ?: "Null"
                     tvCount.text = resultValue.toString()
                 }
             }

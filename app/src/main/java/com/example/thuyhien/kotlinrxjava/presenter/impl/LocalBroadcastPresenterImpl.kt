@@ -9,7 +9,7 @@ import javax.inject.Inject
  * Created by thuyhien on 4/17/18.
  */
 class LocalBroadcastPresenterImpl
-    @Inject constructor(private val serverConnection: LocalBroadcastServerConnection): LocalBroadcastPresenter{
+@Inject constructor(private val serverConnection: LocalBroadcastServerConnection) : LocalBroadcastPresenter {
 
     override fun connectServer() {
         serverConnection.connect()

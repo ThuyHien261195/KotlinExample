@@ -28,7 +28,7 @@ class BoundServiceActivity : DaggerAppCompatActivity(), BoundServiceView {
             }
         }
 
-        btnStopService.setOnClickListener{
+        btnStopService.setOnClickListener {
             if (serviceBound) {
                 unbindService(serviceConnection)
                 serviceBound = false
@@ -53,7 +53,7 @@ class BoundServiceActivity : DaggerAppCompatActivity(), BoundServiceView {
         }
     }
 
-    private var serviceConnection = object: ServiceConnection {
+    private var serviceConnection = object : ServiceConnection {
         override fun onServiceDisconnected(name: ComponentName?) {
             serviceBound = false
             Log.e(TAG_LOG_BOUND_SERVICE, "onServiceDisconnected")

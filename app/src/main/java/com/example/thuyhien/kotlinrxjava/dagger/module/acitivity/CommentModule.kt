@@ -12,5 +12,5 @@ import dagger.Module
 abstract class CommentModule {
 
     @Binds
-    abstract fun provideCommentPresenter(commentPresenterImpl: CommentPreseterImpl) : CommentPresenter
+    abstract fun provideCommentPresenter(commentPresenterImpl: CommentPreseterImpl): CommentPresenter
 }

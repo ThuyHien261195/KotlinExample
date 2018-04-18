@@ -14,6 +14,7 @@ import com.example.thuyhien.kotlinrxjava.ui.activity.ExampleServiceActivity.Comp
 class PlayerInService : Service() {
 
     lateinit var filePath: String
+
     companion object {
         const val TAG_LOG_SERVICE = "2359Service"
         lateinit var mediaPlayer: MediaPlayer
@@ -51,10 +52,10 @@ class PlayerInService : Service() {
     private fun initMediaListener() {
         try {
             mediaPlayer = MediaPlayer.create(this, R.raw.example_song)
-        } catch (e : Exception) {
+        } catch (e: Exception) {
             Log.e(TAG_LOG_SERVICE, "Cannot set data source ${e.message}")
         }
         mediaPlayer.start()
-        mediaPlayer.setOnCompletionListener { mp ->  }
+        mediaPlayer.setOnCompletionListener { mp -> }
     }
 }

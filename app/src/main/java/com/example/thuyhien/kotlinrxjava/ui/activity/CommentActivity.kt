@@ -68,7 +68,7 @@ class CommentActivity : DaggerAppCompatActivity(), CommentView {
         rvComments.adapter = commentAdapter
 
         btnSend.setOnClickListener({
-           commentPresenter.sendMessageToServer(editTextComment.text.toString())
+            commentPresenter.sendMessageToServer(editTextComment.text.toString())
         })
     }
 }

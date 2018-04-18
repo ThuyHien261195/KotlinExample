@@ -14,6 +14,7 @@ import com.example.thuyhien.kotlinrxjava.ui.activity.CountActivity.Companion.EXT
  */
 class CountIntentService : IntentService("CountDownService") {
     private var maxNumber = 0
+
     companion object {
         const val TAG_LOG_INTENT_SERVICE = "2359IntentService"
         const val EXTRA_RESULT_NUMBER = "ResultNumber"
@@ -23,7 +24,7 @@ class CountIntentService : IntentService("CountDownService") {
         getData(intent)
 
         val resultReceiver = intent?.getParcelableExtra<ResultReceiver>(CountActivity.EXTRA_COUNT_RECEIVER)
-        for(i in 0..maxNumber) {
+        for (i in 0..maxNumber) {
             Thread.sleep(1000)
             val bundle = Bundle()
             bundle.putInt(EXTRA_RESULT_NUMBER, i)

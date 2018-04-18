@@ -15,8 +15,8 @@ import dagger.Module
 abstract class CountModule {
     @ActivityScope
     @Binds
-    abstract fun provideCountView(countActivity: CountActivity) : CountView
+    abstract fun provideCountView(countActivity: CountActivity): CountView
 
     @Binds
-    abstract fun provideCountPresenter(countPresenterImpl: CountPresenterImpl) : CountPresenter
+    abstract fun provideCountPresenter(countPresenterImpl: CountPresenterImpl): CountPresenter
 }

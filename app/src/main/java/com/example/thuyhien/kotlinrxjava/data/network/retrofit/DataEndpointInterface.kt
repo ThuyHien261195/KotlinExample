@@ -10,8 +10,8 @@ import retrofit2.http.Query
  */
 interface DataEndpointInterface {
     @GET("coupons/")
-    fun getStoreCoupons(@Query("status") status: String) : Observable<StoreCoupons>
+    fun getStoreCoupons(@Query("status") status: String): Observable<StoreCoupons>
 
     @GET("storeOffers/")
-    fun getStoreInfo() : Observable<StoreCoupons>
+    fun getStoreInfo(): Observable<StoreCoupons>
 }

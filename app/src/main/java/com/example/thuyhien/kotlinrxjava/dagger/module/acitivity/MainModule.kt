@@ -13,5 +13,5 @@ import dagger.Module
 abstract class MainModule {
     @ActivityScope
     @Binds
-    abstract fun provideMainView(mainActivity: MainActivity) : MainView
+    abstract fun provideMainView(mainActivity: MainActivity): MainView
 }

@@ -10,7 +10,7 @@ import com.example.thuyhien.kotlinrxjava.ui.viewholder.CommentViewHolder
 /**
  * Created by thuyhien on 3/29/18.
  */
-class CommentAdapter(private val commentList: ArrayList<Comment>) : RecyclerView.Adapter<CommentViewHolder>(){
+class CommentAdapter(private val commentList: ArrayList<Comment>) : RecyclerView.Adapter<CommentViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommentViewHolder {
         val rowView = parent.inflateView(R.layout.item_comment)
         return CommentViewHolder(rowView)

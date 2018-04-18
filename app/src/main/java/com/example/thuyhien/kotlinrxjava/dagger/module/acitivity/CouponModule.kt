@@ -15,8 +15,8 @@ import dagger.Module
 abstract class CouponModule {
     @ActivityScope
     @Binds
-    abstract fun provideCouponView(couponActivity: CouponActivity) : CouponView
+    abstract fun provideCouponView(couponActivity: CouponActivity): CouponView
 
     @Binds
-    abstract fun provideCouponPresenter(couponPresenterImpl: CouponPresenterImpl) : CouponPresenter
+    abstract fun provideCouponPresenter(couponPresenterImpl: CouponPresenterImpl): CouponPresenter
 }

@@ -9,6 +9,6 @@ import kotlinx.android.synthetic.main.item_comment.*
  */
 class CommentViewHolder(containerView: View) : BaseViewHolder<Comment>(containerView) {
     override fun bind(data: Comment) {
-        tvComment.text  = data.comment
+        tvComment.text = data.comment
     }
 }
