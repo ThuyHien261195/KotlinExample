@@ -25,5 +25,4 @@ class CouponAdapter(private val couponList: List<Coupon>, private val couponsAct
     override fun onBindViewHolder(holder: CouponViewHolder, position: Int) = holder.bind(couponList[position])
 
     override fun getItemCount() = couponList.size
-
 }

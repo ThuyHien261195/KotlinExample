@@ -4,16 +4,16 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
-import com.example.thuyhien.kotlinrxjava.localDatabase.CouponDatabase
+import com.example.thuyhien.kotlinrxjava.localDatabase.CouponDataHelper
 import com.example.thuyhien.kotlinrxjava.localDatabase.interactor.SQLiteInteractor
 import com.example.thuyhien.kotlinrxjava.localDatabase.interactor.listener.SQLiteListener
 import com.example.thuyhien.kotlinrxjava.localDatabase.table.CouponEntry
 import com.example.thuyhien.kotlinrxjava.localDatabase.table.CouponEntry.COUPON_CODE_COL
 import com.example.thuyhien.kotlinrxjava.localDatabase.table.CouponEntry.COUPON_COL
+import com.example.thuyhien.kotlinrxjava.localDatabase.table.CouponEntry.COUPON_TABLE_NAME
 import com.example.thuyhien.kotlinrxjava.localDatabase.table.CouponEntry.EXPIRY_DATE_COL
 import com.example.thuyhien.kotlinrxjava.localDatabase.table.CouponEntry.ID_COL
 import com.example.thuyhien.kotlinrxjava.localDatabase.table.CouponEntry.STORE_COL
-import com.example.thuyhien.kotlinrxjava.localDatabase.table.CouponEntry.TABLE_NAME
 import com.example.thuyhien.kotlinrxjava.model.Coupon
 
 /**
@@ -22,7 +22,7 @@ import com.example.thuyhien.kotlinrxjava.model.Coupon
 class SQLiteInteractorImpl(val context: Context) : SQLiteInteractor {
     private val TAG = SQLiteInteractorImpl::class.java.simpleName
 
-    private val dbHelper = CouponDatabase(context)
+    private val dbHelper = CouponDataHelper(context)
 
     override fun storeCouponList(couponList: List<Coupon>, sqliteListener: SQLiteListener<Boolean>) {
         for (coupon in couponList) {
@@ -50,7 +50,7 @@ class SQLiteInteractorImpl(val context: Context) : SQLiteInteractor {
         }
 
         val id: Long = db.transaction {
-            insert(CouponEntry.TABLE_NAME, null, values)
+            insert(CouponEntry.COUPON_TABLE_NAME, null, values)
         }
 
         sqliteListener.loadDataSuccess(id)
@@ -63,7 +63,7 @@ class SQLiteInteractorImpl(val context: Context) : SQLiteInteractor {
 
         val db = dbHelper.readableDatabase
 
-        val cursor = db.doQuery(TABLE_NAME, columns, orderBy = order)
+        val cursor = db.doQuery(COUPON_TABLE_NAME, columns, orderBy = order)
 
         val couponList = parseCouponFrom(cursor)
 
