@@ -3,14 +3,13 @@ package com.example.thuyhien.kotlinrxjava.localDatabase.table
 import android.provider.BaseColumns
 
 /**
- * Created by thuyhien on 3/26/18.
+ * Created by thuyhien on 4/24/18.
  */
-
-val DATABASE_NAME = "habittrainer.db"
-val DATABASE_VERSION = 10
+val DATABASE_NAME = "Kotlin.db"
+val DATABASE_VERSION = 2
 
 object CouponEntry : BaseColumns {
-    val TABLE_NAME = "habit"
+    val COUPON_TABLE_NAME = "habit"
     val ID_COL = "id"
     val STORE_COL = "store"
     val COUPON_COL = "coupon"
