@@ -43,4 +43,12 @@ abstract class ActivityBuilderModule {
     @ActivityScope
     @ContributesAndroidInjector(modules = arrayOf(LocalBroadcastModule::class))
     abstract fun bindsLocalBroadcastActivity(): LocalBroadcastActivity
+
+    @ActivityScope
+    @ContributesAndroidInjector(modules = arrayOf(ContactModule::class))
+    abstract fun bindsContactActivity(): ContactActivity
+
+    @ActivityScope
+    @ContributesAndroidInjector(modules = arrayOf(SignInModule::class))
+    abstract fun bindsSignInActivity(): SignInActivity
 }
