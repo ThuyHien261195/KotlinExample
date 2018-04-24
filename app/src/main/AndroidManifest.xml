@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:name=".KotlinApplication"
@@ -46,7 +47,14 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".ui.activity.LocalBroadcastActivity"></activity>
+        <activity android:name=".ui.activity.LocalBroadcastActivity" />
+        <activity android:name=".ui.activity.ContactActivity" />
+        <activity android:name=".ui.activity.SignInActivity" />
+
+        <provider
+            android:authorities="com.example.thuyhien.kotlinrxjava.contentProvider"
+            android:name=".contentProvider.AccountProvider"
+            android:exported="true"/>
     </application>
 
 </manifest>

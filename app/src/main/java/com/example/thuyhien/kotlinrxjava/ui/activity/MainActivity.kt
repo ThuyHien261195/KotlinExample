@@ -47,6 +47,14 @@ class MainActivity : DaggerAppCompatActivity(), MainView {
                     val intent = Intent(this, LocalBroadcastActivity::class.java)
                     startActivity(intent)
                 }
+                R.id.action_view_contact -> {
+                    val intent = Intent(this, ContactActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.action_sign_in -> {
+                    val intent = Intent(this, SignInActivity::class.java)
+                    startActivity(intent)
+                }
             }
 
             drawerLayout.closeDrawers()

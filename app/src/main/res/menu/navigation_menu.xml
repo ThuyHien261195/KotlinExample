@@ -22,5 +22,11 @@
         <item
             android:id="@+id/action_local_broadcast"
             android:title="@string/action_local_broadcast" />
+        <item
+            android:id="@+id/action_view_contact"
+            android:title="@string/view_contact" />
+        <item
+            android:id="@+id/action_sign_in"
+            android:title="@string/action_sign_in" />
     </group>
 </menu>

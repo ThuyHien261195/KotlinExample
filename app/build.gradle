@@ -64,4 +64,5 @@ dependencies {
     implementation "com.google.dagger:dagger-android:$daggerVersion"
     implementation "com.google.dagger:dagger-android-support:$daggerVersion"
     implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation 'org.jetbrains.anko:anko-common:0.9'
 }
