@@ -10,8 +10,8 @@ import javax.inject.Inject
  * Created by thuyhien on 4/13/18.
  */
 class CountPresenterImpl
-@Inject constructor(countActivity: CountActivity) : CountPresenter {
-    private val countViewWeakRef = WeakReference<CountView>(countActivity)
+@Inject constructor(countView: CountView) : CountPresenter {
+    private val countViewWeakRef = WeakReference<CountView>(countView)
 
     override fun startCount() {
         getCountView()?.getMaxCountNumber(10)

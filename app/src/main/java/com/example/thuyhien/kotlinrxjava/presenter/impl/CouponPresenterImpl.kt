@@ -18,13 +18,13 @@ import javax.inject.Inject
  * Created by thuyhien on 3/21/18.
  */
 class CouponPresenterImpl
-@Inject constructor(couponActivity: CouponActivity,
+@Inject constructor(couponView: CouponView,
                     private val loadDataInteractor: LoadDataInteractor,
                     private val sqliteInteractor: SQLiteInteractor,
                     private val context: Context)
     : CouponPresenter, LoadDataListener<List<Coupon>> {
 
-    private val couponViewWeakRef: WeakReference<CouponView> = WeakReference(couponActivity)
+    private val couponViewWeakRef: WeakReference<CouponView> = WeakReference(couponView)
 
     override fun getCouponList() {
         showLoading()
